@@ -1,0 +1,435 @@
+:root {
+    --bg-color: #0f172a;        /* Deep Dark Blue/Gray */
+    --card-bg: #1e293b;        /* Lighter Slate Gray for cards */
+    --text-main: #f8fafc;      /* Almost White */
+    --text-muted: #94a3b8;     /* Muted Gray */
+    --accent-color: #38bdf8;   /* Bright Sky Blue */
+    --accent-hover: #0ea5e9;
+    --border-color: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    max-width: 1400px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 90px;
+}
+
+nav .left a {
+    color: var(--text-main);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav .right a {
+    color: var(--text-muted);
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav .right a:hover {
+    color: var(--accent-color);
+}
+
+nav .right a i {
+    margin-right: 6px;
+}
+
+/* HERO SECTION */
+.hero-section {
+    display: flex;
+    justify-content: center; /* Change this from space-between to center */
+    align-items: center;
+    padding: 80px 50px;
+    gap: 50px;
+    text-align: center;      /* Add this to center the text inside the div */
+}
+
+.hero-section .text {
+    flex: none;             /* Remove the flex-grow value */
+    max-width: 800px;       /* Optional: limits width for better readability */
+    margin: 0 auto;         /* Centers the block itself */
+}
+
+.hero-section .text h2 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-section .text p {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+.hero-section .links a {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+/* SECTION: About Me (Screenshot Layout) */
+.about-section {
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+
+.about-section h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    color: var(--test-color);
+}
+
+/* Shared Card Style (Matching Projects) */
+.about-main-card, .about-small-card {
+    background-color: var(--test-color);
+    border: 1.5px solid #333;
+    border-radius: 15px;
+    padding: 30px;
+    color: #fff;
+}
+
+/* Top Large Card */
+.about-main-card {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+.about-main-card p {
+    color: #bbb;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.about-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.expertise-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+}
+
+/* Bottom Grid Layout */
+.about-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-small-card h3 {
+    color: var(--link-color);
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Tags Styling */
+.about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.about-tags span {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--link-color);
+}
+
+.cert-list {
+    list-style: none;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.cert-list li {
+    margin-bottom: 8px;
+}
+
+.cert-list li::before {
+    content: "•";
+    color: var(--link-color);
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .expertise-row, .about-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--border-color);
+    color: var(--text-main) !important;
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color) !important;
+}
+
+.hero-section .headshot img {
+    border-radius: 30px;
+    width: 380px;
+    filter: grayscale(20%);
+    border: 4px solid var(--border-color);
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+    padding: 100px 50px;
+}
+
+.projects-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 35px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-8px);
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.project-tags span {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* SKILLS SECTION */
+.skills-section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.skills-section h2 {
+    margin-bottom: 50px;
+}
+
+.skills-section .cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-section .cell:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-8px);
+}
+
+.skills-section .cell {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 180px;
+    transition: 0.3s;
+
+}
+
+.skills-section .cell i {
+    font-size: 28px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: 100px 50px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Optional: adds space below the title */
+    width: 100%;         /* Ensures it takes the full width to center properly */
+}
+
+.contact-section .group {
+    display: flex;
+    gap: 80px;
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-section .text {
+    flex: 1;
+    font-size: 20px;
+}
+
+.contact-section form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-section input, .contact-section textarea {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+.contact-section input:focus, .contact-section textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.contact-section button {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .hero-section, .contact-section .group {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-section .text p {
+        margin: 0 auto 35px auto;
+    }
+    .hero-section .headshot img {
+        width: 300px;
+    }
+}
+
+/* Target the container for the input/textarea */
+.form-group {
+    margin-bottom: 20px; /* Adds space between the rows */
+}
+
+/* Target the actual input and textarea boxes */
+.form-group input, 
+.form-group textarea {
+    width: 100%;           /* Ensures it takes the full width of the container */
+    padding: 15px 20px;    /* This is the "Bigness" - Top/Bottom 15px, Left/Right 20px */
+    font-size: 16px;       /* Makes the text easier to read */
+    border-radius: 10px;   /* Smoother corners to match your cards */
+    background-color: #1a1c20; /* Matches your --test-color */
+    border: 1px solid #444;    /* Subtle dark border */
+    color: #fff;           /* White text for typing */
+    outline: none;         /* Removes the default browser highlight */
+    transition: border-color 0.3s ease;
+}
+
+/* Make the textarea even taller since it's for the message */
+.form-group textarea {
+    min-height: 150px;     /* Ensures the message box is significantly larger */
+    resize: vertical;      /* Allows the user to pull it down but not wide */
+}
+
+/* Highlight effect when the user clicks inside */
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--link-color); /* Changes to your blue color when active */
+}
